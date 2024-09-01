@@ -6,6 +6,7 @@ import Image from "next/image";
 import { IoMdStopwatch } from "react-icons/io";
 import { FiSun } from "react-icons/fi";
 import { FaMoon } from "react-icons/fa";
+import { FaCheck, FaSpinner } from "react-icons/fa6";
 import Confetti from "react-confetti";
 import RocketDark from './images/Rocket_dark.png'
 import RocketLight from './images/Rocket_Light.png'
@@ -133,7 +134,7 @@ export default function Home() {
         <p className="font-extralight text-center">Exciting Things are in the works! We're currently <span className="font-bold">Crafting a new Feature</span> for you</p>
         <p className="font-extralight text-center">Keep an eye out for updates-We're working to make it availible soon !</p>
        </div>
-       <div className="w-full h-[65%] flex flex-col items-center md:mt-0 mt-20">
+       <div className={`w-full ${showTimer ? 'h-[65%]' : 'h-[30%]'} flex flex-col items-center md:mt-0 mt-20`}>
         <div className="flex flex-row gap-3  items-center mt-8">
          <h1 className={`font-semibold ${darkMode ? 'text-black': 'text-white'} text-3xl text-center`}>GET READY FOR THE REVEAL !</h1>
 
@@ -155,19 +156,28 @@ export default function Home() {
           <p className={`${darkMode ? 'text-black': 'text-white'} font-extralight text-center`}>Be the First To Know ! Share Your Email and We'll notify You when it's live</p>
         </div>
        </div>
-       <div className={`w-[80%] md:w-full h-[10%] flex lg:flex-row flex-col items-center justify-center gap-4  ${showTimer ? 'mb-12' : 'mb-24'}`}>
+       <div className={`w-[80%] md:w-full h-[10%] flex lg:flex-row flex-col items-center justify-center gap-4  ${showTimer ? '0' : 'mb-24'}`}>
         <input 
          type="text"
          name='email'
          placeholder="Please enter your email id"
          value={email}
          onChange={handleEmailChange}
-         className={`font-extralight h-14 lg:h-10 w-[80%]  lg:w-[70%] border-2 ${darkMode ? 'border-black' : 'border-slate-200'} bg-transparent p-2 rounded-md `} 
+         className={`font-extralight h-14 lg:h-10 w-[80%]  lg:w-[70%] border-2 ${darkMode ? 'border-black text-black' : 'border-slate-200 text-white'}  bg-transparent p-2 rounded-md `} 
         />
-        <button className={`h-14 lg:h-10 lg:w-28 w-[80%] ${darkMode ? 'bg-black text-white' : 'bg-white text-black'} rounded-lg`} onClick={handleNotifyClick} disabled={!isValidEmail || isLoading || isNotified} >
+        
+        <button className={`h-14 lg:h-10 ${isNotified ? 'lg:w-10 w-[80%]' : 'lg:w-28 w-[80%]'} 
+      
+            ${darkMode ? 'bg-black text-white' : 'bg-white text-black'}
+            ${!isValidEmail || isLoading || isNotified ? 'cursor-not-allowed text-gray-500' : ''}
+             ${isNotified ? (darkMode ? 'text-black' : 'text-white') : ''}
+           rounded-lg flex items-center justify-center`}
+          
+          
+          onClick={handleNotifyClick} disabled={!isValidEmail || isLoading || isNotified} >
           {
-            isLoading ? (<span className="animate-spin">⏳</span>) :  isNotified ? (
-              <FaCheckCircle color="green" />
+            isLoading ? (<span className="animate-spin"><FaSpinner size={25} className={`${darkMode ? 'text-white' : 'text-black'}`} /></span>) :  isNotified ? (
+              <FaCheck  className={`h-6 w-6  ${darkMode ? 'text-white' : 'text-black'}`} />
             ) : (
               "Notify Me"
             )
