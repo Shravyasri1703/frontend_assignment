@@ -131,8 +131,8 @@ export default function Home() {
           </div>
          <h1 className="text-3xl lg:text-4xl font-bold text-center">Launching New Module Soon !</h1>
         </div>
-        <p className="font-extralight text-center">Exciting Things are in the works! We're currently <span className="font-bold">Crafting a new Feature</span> for you</p>
-        <p className="font-extralight text-center">Keep an eye out for updates-We're working to make it availible soon !</p>
+        <p className="font-extralight text-center">Exciting Things are in the works! We&apos;re currently <span className="font-bold">Crafting a new Feature</span> for you</p>
+        <p className="font-extralight text-center">Keep an eye out for updates-We&apos;re working to make it availible soon !</p>
        </div>
        <div className={`w-full ${showTimer ? 'h-[65%]' : 'h-[30%]'} flex flex-col items-center md:mt-0 mt-20`}>
         <div className="flex flex-row gap-3  items-center mt-8">
@@ -153,7 +153,7 @@ export default function Home() {
            </div>
         </div>)}
         <div className="mt-10 md:w-full w-[80%]">
-          <p className={`${darkMode ? 'text-black': 'text-white'} font-extralight text-center`}>Be the First To Know ! Share Your Email and We'll notify You when it's live</p>
+          <p className={`${darkMode ? 'text-black': 'text-white'} font-extralight text-center`}>Be the First To Know ! Share Your Email and We&apos;ll notify You when it&apos;s live</p>
         </div>
        </div>
        <div className={`w-[80%] md:w-full h-[10%] flex lg:flex-row flex-col items-center justify-center gap-4  ${showTimer ? '0' : 'mb-24'}`}>
