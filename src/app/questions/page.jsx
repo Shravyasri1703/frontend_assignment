@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from "next/image";
-import logo from '../images/Logo.png'
+import logo from '../../images/Logo.png'
 import { IoMdHome } from "react-icons/io";
 import { CgProfile } from "react-icons/cg";
 const page = () => {

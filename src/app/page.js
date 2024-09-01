@@ -1,18 +1,18 @@
 'use client'
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import logo from './images/Logo.png'
+import logo from '../images/Logo.png'
 import Image from "next/image";
 import { IoMdStopwatch } from "react-icons/io";
 import { FiSun } from "react-icons/fi";
 import { FaMoon } from "react-icons/fa";
 import { FaCheck, FaSpinner } from "react-icons/fa6";
 import Confetti from "react-confetti";
-import RocketDark from './images/Rocket_dark.png'
-import RocketLight from './images/Rocket_Light.png'
+import RocketDark from '../images/Rocket_Dark.png'
+import RocketLight from '../images/Rocket_Light.png'
 import { FaCheckCircle } from "react-icons/fa";
-import Blobs_1 from './images/BackgTransparent.png'
-import Blobs_2 from './images/Blobs_2.png'
+import Blobs_1 from '../images/BackgTransparent.png'
+import Blobs_2 from '../images/Blobs_2.png'
 
 export default function Home() {
   const [darkMode, setdarkMode] = useState(false)
@@ -136,7 +136,7 @@ export default function Home() {
        </div>
        <div className={`w-full ${showTimer ? 'h-[65%]' : 'h-[30%]'} flex flex-col items-center md:mt-0 mt-20`}>
         <div className="flex flex-row gap-3  items-center mt-8">
-         <h1 className={`font-semibold ${darkMode ? 'text-black': 'text-white'} text-3xl text-center`}>GET READY FOR THE REVEAL !</h1>
+         <h1 className={`font-semibold ${darkMode ? 'text-black': 'text-white'} lg:text-3xl sm:text-3xl  text-center`}>GET READY FOR THE REVEAL !</h1>
 
         </div>
          {showTimer && (<div className={`h-44 w-96 border-2 border-slate-200 flex flex-row items-center justify-evenly mt-8 rounded-xl ${darkMode ? 'bg-gradient-to-r from-[#E5B8D9] to-[#C9B8E5]' :'bg-gradient-to-r from-[#380D2C] via-[#4D173E] to-[#2B174D]'}`}>
